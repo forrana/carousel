@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.slider_arrow {
+  height: 4px;
+  width: 40px;
+  margin-top: 30px;
+  top: -15px;
+  position: absolute;
+  background: darkgray;
+  transition:0.5s ease;
+  transform: rotate(45deg);
+}
+
+.slider_left_arrow {
+  transform: rotate(135deg);
+}
+
+.slider_right_arrow::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 40px;
+  background: darkgray;
+  transition: 0.5s ease;
+  transform: translate(19px,19px) rotate(90deg);
+}
+
+.slider_left_arrow::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 40px;
+  background: darkgray;
+  transition:0.5s ease;
+  transform: translate(19px, -19px) rotate(90deg);
+}
+
+.slider_arrow_wrapper {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 50px;
+}
+
+.slider_arrow_wrapper:hover .slider_right_arrow{
+  transform: rotate(45deg) scale(1.2);
+  background: orange;
+}
+.slider_arrow_wrapper:hover .slider_right_arrow::after{
+  background: orange;
+}
+
+.slider_arrow_wrapper:hover .slider_left_arrow{
+  transform: rotate(135deg) scale(1.2);
+  background: orange;
+}
+.slider_arrow_wrapper:hover .slider_left_arrow::after{
+  background: orange;
+}
