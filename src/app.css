@@ -9,10 +9,16 @@
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+  visibility: visible;
+  opacity: 1;
+
+  transition: visibility 0s, opacity 0.5s ease;
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
 }
 
 .slider_arrow {
