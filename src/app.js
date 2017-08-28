@@ -1,6 +1,6 @@
 import style from "./app.css"
 
-const ELEMENTS_LIMIT = 5;
+const ELEMENTS_LIMIT = 4;
 const container = document.querySelector('#slider');
 
 class Slider {
@@ -85,7 +85,7 @@ class Slider {
   slideLeft() {
     this.frame = [];
     this.startFrame =
-      this.startFrame > -1 * this.totalFrames ? this.startFrame - 1 : -1;
+      this.startFrame > -1 * this.totalFrames ? this.startFrame - ELEMENTS_LIMIT : -1;
 
     for(let i = this.startFrame; i < this.startFrame + ELEMENTS_LIMIT; i++)
       this.calculateFramePosition(i);
@@ -96,7 +96,7 @@ class Slider {
   slideRight() {
     this.frame = [];
     this.startFrame =
-      this.startFrame < this.totalFrames ? this.startFrame + 1 : 1;
+      this.startFrame < this.totalFrames ? this.startFrame + ELEMENTS_LIMIT : 1;
 
     for(let i = this.startFrame; i < this.startFrame + ELEMENTS_LIMIT; i++)
       this.calculateFramePosition(i);
