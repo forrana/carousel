@@ -1,10 +1,12 @@
 import style from "./app.css"
 
-const ELEMENTS_LIMIT = 4;
+let ELEMENTS_LIMIT = 3;
 const container = document.querySelector('#slider');
 
 class Slider {
-  constructor() {
+  constructor(slides) {
+    ELEMENTS_LIMIT = slides || ELEMENTS_LIMIT;
+
     const childrens = [...container.children];
 
     container.appendChild(this.initializeLeftArrow());
@@ -106,4 +108,4 @@ class Slider {
 
 }
 
-export default new Slider();
+export default Slider;

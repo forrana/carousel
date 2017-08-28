@@ -6,9 +6,9 @@ module.exports = {
         slider: './src/index.js',
     },
     output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, './docs'),
-        publicPath: 'js/',
+        path: path.join(__dirname, "docs", "[hash]"),
+        publicPath: "js/[hash]/",
+        filename: "[name].[hash].bundle.js"
     },
     module: {
         rules: [
